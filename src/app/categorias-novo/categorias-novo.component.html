@@ -1,0 +1,14 @@
+<mat-card class="home mat-elevation-z4">
+    <mat-card-title>Nova Categoria </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Marca" [(ngModel)]="items.marca" name="marca" type="text" required>
+            </mat-form-field>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="salvar()">Salvar </button>
+        <button mat-raised-button color="warn" (click)="cancelar()">Cancelar </button>
+    </mat-card-actions>
+</mat-card>

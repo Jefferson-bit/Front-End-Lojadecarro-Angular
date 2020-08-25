@@ -1,0 +1,26 @@
+.home{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.div {
+    text-align: center;
+}
+
+.card{
+    width: 25%;
+    float: left;
+    text-justify: auto;
+    text-align: center;
+    margin: 0 auto;
+    margin-left: 60px;
+    margin-bottom: 20px;
+}
+
+.header{
+    text-align: center;
+}
+
+.card2{
+    width: 90%;
+    
+}

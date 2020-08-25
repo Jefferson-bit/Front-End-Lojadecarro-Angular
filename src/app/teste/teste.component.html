@@ -1,0 +1,39 @@
+<mat-card class="home mat-elevation-z4">
+    <mat-card-title class="title">
+        Bem-vindo a Loja de Carros
+    </mat-card-title>
+</mat-card>
+
+<div class="div">
+    <h1>Loja do Dacioso</h1>
+    <p>Aqui temos diversos modelos de carros, com motores 1.0/2.0 e de tamanha qualidade, tais como Mustang, Gol
+        Quadrado
+        , Uno da Firma entre outros.
+    </p>
+    <p>Caso queira ver o conteúdo da nossa loja e nossas marcas.<a routerLink="/categorias">Clique Aqui </a>
+    </p>
+
+</div>
+
+<mat-card class="card mat-elevation-z3" *ngFor="let item of veiculos ">
+    
+    <mat-card-header class="header">
+        <mat-card-title>{{item.modelo}}</mat-card-title>
+        <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+
+    <img mat-card-image src="http://localhost:8080/file/car?nome={{item.modelo}}.jpg" alt="...">
+
+    <mat-card-content> Preço: {{ item.preco | currency : 'BRL' }} , Ano:
+        {{ item.ano | date: 'dd/MM/yyyy'}}
+    </mat-card-content>
+
+    <mat-card-actions class="button" >
+            <button  mat-raised-button (click)="onVeiculo(item.id)"> Detalhes </button>          
+    </mat-card-actions>
+    <mat-card-footer>
+        
+    </mat-card-footer>
+</mat-card>
+
+

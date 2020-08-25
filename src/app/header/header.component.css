@@ -1,0 +1,44 @@
+.header{
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.header .title-group{
+    padding-right: 15px;
+}
+
+.header a{
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    
+}
+.home a{
+    color: #fff; 
+}
+
+.sidenav{
+    background-color: #3F51B5;
+    width: 200px;
+}
+
+.sidenav a{
+    color: #fff; 
+}
+
+.sidenav i{
+    padding-right: 5px;
+}
+.content{
+    padding: 16px;
+    background-color: #fff;
+    height: 86vh;
+}
+
+.logout{
+    
+    margin-left: 1000px;
+    justify-content: flex-end;
+    display: flex;
+}

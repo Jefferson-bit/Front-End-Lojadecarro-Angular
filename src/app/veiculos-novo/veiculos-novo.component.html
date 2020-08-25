@@ -1,0 +1,60 @@
+<mat-card class="home mat-elevation-z3">
+    <mat-card-title>Novo Veiculo </mat-card-title>
+    <mat-card-content>
+        <form>
+            <mat-form-field>
+                <input matInput placeholder="Modelo" [(ngModel)]="veiculo.modelo" name="modelo" type="text">
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Ano" [matDatepicker]="picker" [(ngModel)]="veiculo.ano" name="ano">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-select placeholder="Categoria" [(ngModel)]="veiculo.categoriaId" name="categoria" type="number">
+                    <mat-option *ngFor="let item of items" [value]="item.id">
+                        {{item.marca}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Preco" [(ngModel)]="veiculo.preco" name="preco" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Tipo do Veiculo" [(ngModel)]="veiculo.tipoVeiculo" name="tipoVeiculo"
+                    type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Cor" [(ngModel)]="veiculo.cor" name="cor" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="KMRodado" [(ngModel)]="veiculo.kmRodado" name="kmRodado" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Portas" [(ngModel)]="veiculo.portas" name="portas" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Cambio" [(ngModel)]="veiculo.cambio" name="cambio" type="text">
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Informações" [(ngModel)]="veiculo.informacoes" name="informacoes"
+                    type="text">
+            </mat-form-field>
+      
+            <label>
+                <input placeholder="Foto" type="file" multiple (change)="onChange($event)" />
+            </label>
+
+            <button mat-raised-button [disabled]="!selectedFiles" (click)="onupload()">Upload</button>
+
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+        <button mat-raised-button color="warn" (click)="cancelar()">Cancelar</button>
+    </mat-card-actions>
+
+</mat-card>

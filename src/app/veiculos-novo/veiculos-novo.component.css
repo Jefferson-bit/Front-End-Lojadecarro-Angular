@@ -1,0 +1,28 @@
+
+.home{
+    text-align: center; 
+    width: 45%;
+    margin: 0 auto;
+    
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+.home button{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+button {
+    margin-left: 10px;
+    color: #fff;
+    background-color:  #0f9b0f;
+    width: 100%;
+}
+

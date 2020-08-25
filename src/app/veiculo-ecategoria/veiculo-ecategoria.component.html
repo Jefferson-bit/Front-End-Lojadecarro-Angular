@@ -1,0 +1,14 @@
+<mat-card class="card mat-elevation-z3" *ngFor="let items of veiculos">
+    <mat-card-header class="header">
+        <mat-card-title>{{items.modelo}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="http://localhost:8080/file/car?nome={{items.modelo}}.jpg" alt="...">
+    <mat-card-content> Preço: {{ items.preco | currency : 'BRL' }} , Ano:
+        {{ items.ano | date: 'dd/MM/yyyy'}}
+    </mat-card-content>
+
+    <mat-card-actions class="button">
+        <button mat-raised-button> Salve </button>
+    </mat-card-actions>
+
+</mat-card>

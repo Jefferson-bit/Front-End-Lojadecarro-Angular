@@ -1,0 +1,41 @@
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { CredenciaisDTO } from '../models/credenciais.dto';
+import { LocalUser } from '../models/local_user';
+import { StorageserviceService } from '../service/storageservice.service';
+import { JwtHelperService } from '@auth0/angular-jwt';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class AccountService {
+
+  jwtHelper: JwtHelperService = new JwtHelperService();
+
+  constructor(public http: HttpClient, public storage: StorageserviceService) { }
+
+  authentication(creds: CredenciaisDTO) {
+    return this.http.post(`${environment.api}/login`, 
+    creds,
+     {
+      observe: 'response',
+      responseType: 'text'  
+    });
+  }
+
+  sucessFullLogin(authorizationValue: string){
+    let tok = authorizationValue.substring(7);
+    let user : LocalUser ={
+      token : tok,
+      email : this.jwtHelper.decodeToken(tok)['sub']
+    };
+
+    this.storage.setLocalUser(user);
+  }
+
+  logout() {
+    this.storage.setLocalUser(null);
+  }
+
+}

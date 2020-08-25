@@ -1,0 +1,10 @@
+.card{
+    max-width: 400px;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.header{
+    text-align: center;
+}
